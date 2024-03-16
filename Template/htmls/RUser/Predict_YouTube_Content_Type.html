@@ -1,0 +1,150 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:rgb(226, 250, 214);padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #000000;
+  font-size: 20px;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+        .style7 {font-size: 24px; color: #FFFF00; font-weight: bold; font-family: Georgia, "Times New Roman", Times, serif; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF YOUTUBE CONTENT TYPE !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="1122" align="center">
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#000000"><div align="center" class="style7" style="margin-bottom: auto;">Enter All YouTube Content Datasets Details Here !!! </div></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter video_id</div></td>
+                                    <td><input type="text" name="video_id"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter title</span></td>
+                                    <td><input type="text" name="title"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter channel_title</div></td>
+                                    <td><input type="text" name="channel_title"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter category</span></td>
+                                    <td><input type="text" name="category"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter publish_time</div>
+                                    </div></td>
+                                    <td><input type="text" name="publish_time"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter content</span></td>
+                                    <td><textarea name="content"></textarea></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter views</div>
+                                    </div></td>
+                                    <td><input type="text" name="views"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter likes</span></td>
+                                    <td><input type="text" name="likes"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter dislikes</div></td>
+                                    <td><input type="text" name="dislikes"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter comment_count</span></td>
+                                    <td><input type="text" name="comment_count"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter Video_link</span></div></td>
+                                    <td><input type="text" name="Video_link"></td>
+                                    <td bgcolor="#FF0000"><span class="style4">Enter publish_date</span></td>
+                                    <td><input type="text" name="publish_date"></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="287" height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter views_per_day</div></td>
+                                    <td width="269"><input type="text" name="views_per_day"></td>
+                                    <td width="269"><input name="submit" type="submit" class="style1" value="Predict"></td>
+                                    <td width="269">&nbsp;</td>
+                                  </tr>
+  <td><p>&nbsp; </p>
+          <p>&nbsp;</p></td>
+  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="842" border="1" align="center" >
+                                    <tr><td width="608" height="51" bgcolor="#000000"><div align="center"><span class="style6">Prediction Of Content Detection Type</span><strong> :: </strong></div></td>
+
+
+
+                                      <td width="224"  bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center"><strong>{{objs}}</strong></div></td>
+                                    </tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

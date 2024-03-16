@@ -1,0 +1,109 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color:  white;
+	font-weight: bold;
+}
+.style12 {color: black; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1" style="color: blue; font-size: 20px; font normal;">View YouTube Content Detection Type Details  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table border="5" bordercolor="#FF00FF">
+
+
+                                   <tr>
+
+                                       <td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">video_id</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6" >title</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">channel_title</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">category</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">publish_time</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">content</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">views</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">likes</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">dislikes</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">comment_count</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">Video_link</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">publish_date</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">views_per_day</span></div></td>
+<td bgcolor=" yellow"><div align="center" class="style12"><span class="style8 style6">Prediction</span></div></td>
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+                           <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy font-weight: normal;" >{{object.video_id}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" ><textarea>{{object.title}}</textarea></td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.channel_title}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.category}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.publish_time}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" ><textarea>{{object.content}}</textarea></td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.views}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.likes}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.dislikes}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.comment_count}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.Video_link}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.publish_date}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.views_per_day}}</td>
+ <td bgcolor="#FFFFFF" style="color:black; font-size:20px; font-family:fantasy; font-weight: normal;" >{{object.Prediction}}</td>
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
